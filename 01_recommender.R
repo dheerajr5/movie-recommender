@@ -47,7 +47,7 @@ movies_full <- movies %>%
     inner_join(ratings, by = 'movieId') %>% 
     left_join(tags_valid, by = 'movieId')
 
-recom <- Recommender(movies_matrix, method = 'IBCF',
+recom <- Recommender(movies_rating, method = 'IBCF',
                      param = list(k = 5))
 
 genre_ch <- c('Action', 'Adventure', 'Comedy')
